@@ -48,39 +48,52 @@
         .modal.show {
             display: flex;
         }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .nav-container::-webkit-scrollbar {
+                display: none;
+            }
+            .nav-content {
+                min-width: max-content;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gray-50">
     <!-- Announcement Banner -->
-    <div class="w-full bg-blue-900 text-white py-3 px-4">
-        <p class="text-center font-medium text-lg">
+    <div class="w-full bg-blue-900 text-white py-2 md:py-3 px-4">
+        <p class="text-center font-medium text-sm md:text-lg">
             Next Event: Food Drive - November 1st, 2024 at Elkridge Community Center
         </p>
     </div>
 
     <!-- Navigation -->
-    <div class="flex justify-center py-4">
-        <nav class="bg-black shadow-lg rounded-full">
-            <div class="h-12 px-8 flex items-center">
-                <div class="text-white font-bold text-lg mr-16">HCMC</div>
+    <div class="flex justify-center py-2 md:py-4 nav-container">
+        <nav class="bg-black shadow-lg rounded-full px-2 md:px-4">
+            <div class="h-12 px-4 md:px-8 flex items-center nav-content">
+                <div class="text-white font-bold text-base md:text-lg mr-8 md:mr-16">HCMC</div>
                 <div class="flex items-center h-full">
-                    <button class="nav-button px-4 py-1.5 text-white">
+                    <button class="nav-button px-3 md:px-4 py-1.5 text-white">
                         <span>Home</span>
                     </button>
-                    <div class="w-12"></div>
-                    <button class="nav-button px-4 py-1.5 text-white">
+                    <div class="w-6 md:w-12"></div>
+                    <button class="nav-button px-3 md:px-4 py-1.5 text-white">
                         <span>About</span>
                     </button>
-                    <div class="w-12"></div>
-                    <button class="nav-button px-4 py-1.5 text-white">
+                    <div class="w-6 md:w-12"></div>
+                    <button class="nav-button px-3 md:px-4 py-1.5 text-white">
                         <span>Calendar</span>
                     </button>
-                    <div class="w-12"></div>
-                    <button class="nav-button px-4 py-1.5 text-white">
+                    <div class="w-6 md:w-12"></div>
+                    <button class="nav-button px-3 md:px-4 py-1.5 text-white">
                         <span>Impact Analysis</span>
                     </button>
-                    <div class="w-12"></div>
-                    <button class="nav-button px-4 py-1.5 text-white" onclick="toggleDonateModal()">
+                    <div class="w-6 md:w-12"></div>
+                    <button class="nav-button px-3 md:px-4 py-1.5 text-white" onclick="toggleDonateModal()">
                         <span>Donate</span>
                     </button>
                 </div>
@@ -91,79 +104,79 @@
     <!-- Hero Section -->
     <header class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://picsum.photos/1920/1080')]"></div>
-        <div class="container mx-auto px-4 py-24 relative">
-            <h1 class="text-6xl font-bold mb-6 text-white font-serif">
+        <div class="container mx-auto px-4 py-12 md:py-24 relative">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-white font-serif">
                 Howard County Muslim Council
             </h1>
-            <p class="text-3xl mb-8 text-white">
+            <p class="text-xl md:text-3xl mb-6 md:mb-8 text-white">
                 Connecting Communities Through Service
             </p>
             <button 
                 onclick="toggleDonateModal()"
-                class="bg-amber-400 text-gray-900 hover:bg-amber-500 text-lg px-8 py-6 font-semibold rounded-xl transition-colors">
+                class="bg-amber-400 text-gray-900 hover:bg-amber-500 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 font-semibold rounded-xl transition-colors">
                 Donate Now
             </button>
         </div>
     </header>
 
     <!-- Events Section -->
-    <section class="py-16 bg-white">
+    <section class="py-8 md:py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center">Upcoming Events</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Event Card 1 -->
-                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-6">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-4 md:p-6">
                     <div class="flex justify-between items-start">
-                        <div class="mb-6 pt-4">
-                            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="mb-4 md:mb-6 pt-4">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <button class="mt-4 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                        <button class="mt-4 px-3 md:px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
                             Add to Calendar
                         </button>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Food Drive</h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Food Drive</h3>
                     <p class="text-gray-600 mb-2">November 1st, 2024</p>
                     <p class="text-gray-600">Elkridge Community Center</p>
                 </div>
 
                 <!-- Event Card 2 -->
-                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-6">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-4 md:p-6">
                     <div class="flex justify-between items-start">
-                        <div class="mb-6 pt-4">
-                            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="mb-4 md:mb-6 pt-4">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <button class="mt-4 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                        <button class="mt-4 px-3 md:px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
                             Add to Calendar
                         </button>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Fundraising Dinner</h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Fundraising Dinner</h3>
                     <p class="text-gray-600 mb-2">November 15th, 2024</p>
                     <p class="text-gray-600">Howard County Banquet Hall</p>
                 </div>
 
                 <!-- Event Card 3 -->
-                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-6">
+                <div class="bg-white shadow-lg rounded-xl overflow-hidden p-4 md:p-6">
                     <div class="flex justify-between items-start">
-                        <div class="mb-6 pt-4">
-                            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="mb-4 md:mb-6 pt-4">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <button class="mt-4 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+                        <button class="mt-4 px-3 md:px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
                             Add to Calendar
                         </button>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Winter Clothing Distribution</h3>
+                    <h3 class="text-lg md:text-xl font-bold mb-2">Winter Clothing Distribution</h3>
                     <p class="text-gray-600 mb-2">November 30th, 2024</p>
                     <p class="text-gray-600">HCMC Office</p>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors inline-flex items-center">
+            <div class="text-center mt-8 md:mt-12">
+                <button class="px-6 md:px-8 py-2 md:py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors inline-flex items-center">
                     View Full Calendar
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -174,12 +187,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 mt-16 rounded-t-3xl">
+    <footer class="bg-gray-900 text-white py-8 md:py-12 mt-8 md:mt-16 rounded-t-3xl">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div>
-                    <h4 class="font-bold mb-4 text-xl">Contact Us</h4>
+                    <h4 class="font-bold mb-4 text-lg md:text-xl">Contact Us</h4>
                     <div class="space-y-3">
+                        <!-- Contact info remains unchanged -->
                         <p class="flex items-center">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -202,7 +216,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4 text-xl">Quick Links</h4>
+                    <h4 class="font-bold mb-4 text-lg md:text-xl">Quick Links</h4>
                     <ul class="space-y-3">
                         <li class="hover:text-amber-400 cursor-pointer">About Us</li>
                         <li class="hover:text-amber-400 cursor-pointer">Programs</li>
@@ -211,7 +225,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4 text-xl">Howard County Muslim Council</h4>
+                    <h4 class="font-bold mb-4 text-lg md:text-xl">Howard County Muslim Council</h4>
                     <p class="text-gray-300">Serving the community of Elkridge, Maryland and surrounding areas.</p>
                 </div>
             </div>
@@ -220,31 +234,9 @@
 
     <!-- Donate Modal -->
     <div id="donateModal" class="modal">
-        <div class="bg-white rounded-xl p-6 max-w-[425px] relative">
+        <div class="bg-white rounded-xl p-4 md:p-6 mx-4 w-full max-w-[425px] relative">
             <button onclick="toggleDonateModal()" class="absolute right-4 top-4">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <h2 class="text-2xl font-bold mb-4">Make a Donation</h2>
-            <div class="grid gap-4 py-4">
-                <div class="grid grid-cols-3 gap-4 mb-6">
-                    <button class="bg-amber-400 hover:bg-amber-500 text-gray-900 h-12 text-lg rounded-xl">$25</button>
-                    <button class="bg-amber-400 hover:bg-amber-500 text-gray-900 h-12 text-lg rounded-xl">$50</button>
-                    <button class="bg-amber-400 hover:bg-amber-500 text-gray-900 h-12 text-lg rounded-xl">$100</button>
-                </div>
-                <button class="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 text-lg rounded-xl">
-                    Custom Amount
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function toggleDonateModal() {
-            const modal = document.getElementById('donateModal');
-            modal.classList.toggle('show');
-        }
-    </script>
-</body>
-</html>
